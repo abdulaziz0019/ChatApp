@@ -18,5 +18,10 @@
 //= require_tree .
 
 $( document ).on('turbolinks:load', function() {
-  console.log("It works on each visit!")
-})
+  $('.ui.rating')
+  .rating({
+    initialRating: 1,
+    maxRating: 10
+  });
+}
+)

@@ -1,4 +1,4 @@
-class Fun::SessionController < ApplicationController
+class SessionController < ApplicationController
 
   def login
     render 'new'
