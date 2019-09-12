@@ -16,12 +16,36 @@
 //= require turbolinks
 //= require semantic-ui
 //= require_tree .
+function scrollToBottom(id){
+   var div = document.getElementById(id);
+   div.scrollTop = div.scrollHeight - div.clientHeight;
+}
 
 $( document ).on('turbolinks:load', function() {
-  $('.ui.rating')
-  .rating({
-    initialRating: 1,
-    maxRating: 10
-  });
-}
-)
+  $('.ui.rating').rating({initialRating: 1,maxRating: 10});
+
+
+/// enabke scrolldown
+  $('.message .close').on('click', function() {
+  $(this).closest('.message').transition('fade');});
+  scrollToBottom("messages-scroll")
+
+// press enter to send message
+  $("#submit-button").keypress(function(event) {
+    if (event.which == 13) {
+        event.preventDefault();
+        $("form").submit();
+    }
+});
+// disable button if field is empty
+function success() {
+	 if(document.getElementById("#text_filed").value==="") {
+            document.getElementById('#submit-button').disabled = true;
+        } else {
+            document.getElementById('#submit-button').disabled = false;
+        }
+    }
+
+
+// closing braces
+})

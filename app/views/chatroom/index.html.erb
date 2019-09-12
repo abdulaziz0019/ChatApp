@@ -1,1 +1,54 @@
-<h1>hello world</h1>
+
+<h2 class="right ui center aligned medium icon header">
+  <i class="inverted red snapchat icon"></i>
+  <div class="content">
+    Azoz chat
+    <div class="sub header">here is a place where you discuess arguments</div>
+  </div>
+</h2>
+<div class="ui grid" >
+  <div class="sixteen wide column"></div>
+  <div class="ten wide column">
+    <div class="ui fluid raised card chatbox" >
+       <div class="content" style="overflow-y:auto;white-space:nowrap;" ID="messages-scroll">
+        <div class="ui large feed" ID = "message-cont"  >
+        <%= render @messages %>
+       </div>
+     </div>
+    <div class=" content ">
+         <%= form_for(@message, url: message_path, remote: true, html: {class: "ui reply form", role: "form"}) do |f| %>
+         <class class="field ">
+           <div class="ui fluid icon input">
+             <%= f.text_field :message , class: "text",placeholder:"Enter message" , ID:"text_filed"%>
+         </class>
+         <%= f.button :sned , class:"ui teal right labe led icon button" , ID:"submit-button"%>
+      </div>
+    </div>
+    <%end%>
+  </div>
+</div>
+  <div class="six wide column">
+    <div class="ui cards ">
+      <div class="card fluid chatbox">
+        <div class="content">
+
+  <table class="ui very basic collapsing celled table">
+    <thead>
+        <tr><th>Employee</th>
+        </tr>
+      </thead>
+  <tbody>
+    <tr>
+      <td>
+          <div class="content">
+            <h4>Lena</h4>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+  </table>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>

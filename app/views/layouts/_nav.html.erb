@@ -17,7 +17,11 @@
           </div>
         </div>
         <div class="item">
-            <div class="ui primary button">Sign Up</div>
+          <% if logged_in %>
+            <%= link_to 'logout', logout_path, method: :delete , class: "ui primary button", data: {confirm:'are you sure?'} %>
+            <% else %>
+            <%= link_to 'signup up', login_path, class: "ui primary button" %>
+              <%end%>
         </div>
       </div>
     </div>
