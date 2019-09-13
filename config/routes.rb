@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     delete 'logout' ,to: 'session#destroy'
     post 'message', to: 'message#create'
     resources 'user', except: [:new]
+
     mount ActionCable, at: "/cable"
 
 
